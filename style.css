@@ -1,0 +1,149 @@
+/*
+    FONTS
+*/
+@font-face {
+    font-family: 'fira_sans';
+    src: url('./firasans-light-webfont.woff2') format('woff2'),
+         url('./firasans-light-webfont.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'fira_sans';
+    src: url('firasans-medium-webfont.woff2') format('woff2'),
+         url('firasans-medium-webfont.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+/*
+    BASE
+*/
+*,
+*:before,
+*:after
+{
+    box-sizing: border-box;
+}
+
+html,
+body
+{
+    width: 100%;
+    height: 100%;
+}
+
+body
+{
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    line-height: 1.42;
+    font-family: "fira_sans", Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    color: #4f4f4f;
+    font-weight: normal;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+}
+
+ul,
+p
+{
+    margin: 0;
+    padding: 0;
+}
+
+ul li
+{
+    list-style-type: none;
+}
+
+/*
+    LAYOUT
+*/
+.wrapper
+{
+    overflow: hidden;
+    min-height: 100%;
+    min-width: 500px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.container
+{
+    width: 460px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/*
+    MAIN
+*/
+.logo
+{
+    text-align: center;
+    margin-bottom: 23px;
+}
+
+.accordeon__title
+{
+    position: relative;
+    z-index: 1000;
+    background-color: #e7e7e7;
+    margin-bottom: 5px;
+    padding: 11px 10px 10px 20px;
+    border-radius: 21px;
+    font-weight: 500;
+}
+
+.accordeon__title.accordeon__title_odd
+{
+    background-color: #696666;
+    color: #ffffff;
+}
+
+.accordeon__title.accordeon__title-active{
+    background-color: #ff8663;
+    color: #ffffff;
+}
+
+.accordeon__content
+{
+    display: none;
+    position: relative;
+    top: -26px;
+    background-color: #e7e7e7;
+    border-radius: 0 0 15px 15px;
+    padding: 31px 10px 13px 22px;
+    margin-bottom: -21px;
+}
+
+.accordeon__title.accordeon__title-active + .accordeon__content
+{
+    display: block;
+}
+
+/*
+    POLYGON
+*/
+.accordeon__polygon
+{
+    position: absolute;
+    top: 50%;
+    right: 21px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 14px solid #ff8663;
+}
+
+.accordeon__title-active .accordeon__polygon
+{
+    border-top: 0;
+    border-bottom: 14px solid #ffffff;
+}
